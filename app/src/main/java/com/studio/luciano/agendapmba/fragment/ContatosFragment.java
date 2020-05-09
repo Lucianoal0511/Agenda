@@ -71,7 +71,8 @@ public class ContatosFragment extends Fragment {
                         new RecyclerItemClickListener.OnItemClickListener() {
                             @Override
                             public void onItemClick(View view, int position) {
-                                Unidade unidadeSelecionada = listaContatos.get(position);
+                                List<Unidade> listaContatosAtualizada = adapter.getContatos();//Lista criada para na busca você pegar o item correto
+                                Unidade unidadeSelecionada = listaContatosAtualizada.get(position);//Recupera o item clicado
                                 Intent i = new Intent(getActivity(), ContatoUnidadeActivity.class);
                                 i.putExtra("contatoUnidade", unidadeSelecionada);
                                 startActivity(i);

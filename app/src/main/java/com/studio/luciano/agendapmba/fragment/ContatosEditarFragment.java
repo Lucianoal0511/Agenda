@@ -80,7 +80,8 @@ public class ContatosEditarFragment extends Fragment {
                         new RecyclerItemClickListener.OnItemClickListener() {
                             @Override
                             public void onItemClick(View view, int position) {
-                                Unidade unidadeSelecionada = listaContatos.get(position);
+                                List<Unidade> listaContatosAtualizados = adapter.getContatos();
+                                Unidade unidadeSelecionada = listaContatosAtualizados.get(position);
                                 Intent i = new Intent(getActivity(), EditarUnidadeActivity.class);
                                 i.putExtra("contatoUnidade", unidadeSelecionada);
                                 startActivity(i);

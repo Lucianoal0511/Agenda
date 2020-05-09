@@ -48,7 +48,7 @@ public class PainelControleActivity extends AppCompatActivity {
                 .create()
         );
 
-        ViewPager viewPager = findViewById(R.id.viewPager);
+        final ViewPager viewPager = findViewById(R.id.viewPager);
         viewPager.setAdapter(adapter);
 
         SmartTabLayout viewPagerTab = findViewById(R.id.viewPagerTab);
@@ -80,10 +80,18 @@ public class PainelControleActivity extends AppCompatActivity {
             @Override
             public boolean onQueryTextChange(String newText) {//Pesquisa a medida que vai escrevendo o texto
                 //Log.d("evento", "onQueryTextChange");
-                ContatosEditarFragment fragmentContatosEdit = (ContatosEditarFragment) adapter.getPage(0);
-                if (newText != null && !newText.isEmpty()){
-                    fragmentContatosEdit.pesquisarContatos(newText.toLowerCase());
+                switch (viewPager.getCurrentItem()){
+                    case 0:
+                        ContatosEditarFragment fragmentContatosEdit = (ContatosEditarFragment) adapter.getPage(0);
+                        if (newText != null && !newText.isEmpty()){
+                            fragmentContatosEdit.pesquisarContatos(newText.toLowerCase());
+                        }
+                        break;
+                    case 1:
+                        CriminososEditarFragment fragmentCriminososEdit = (CriminososEditarFragment) adapter.getPage(1);
+                        break;
                 }
+
                 return true;
             }
         });
