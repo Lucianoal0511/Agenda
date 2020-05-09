@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/menu_pesquisa"
+        android:title="@string/menu_pesquisar"
+        app:showAsAction="always"
+        android:icon="@drawable/ic_search_branco_24dp"/>
+
+    <item
+        android:id="@+id/menu_cadastrar"
+        android:title="@string/menu_cadastrar"
+        app:showAsAction="never"
+        android:orderInCategory="100"/>
+
+    <item
+        android:id="@+id/menu_sair"
+        android:title="@string/menu_sair"
+        app:showAsAction="never"
+        android:orderInCategory="200"/>
+
+</menu>

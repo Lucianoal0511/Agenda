@@ -1,0 +1,49 @@
+<resources>
+    <string name="app_name">Agenda PMBA</string>
+
+    <string name="menu_cadastrar">Cadastrar</string>
+    <string name="menu_sair">Sair</string>
+    <string name="menu_pesquisar">Pesquisar</string>
+
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="bt_tela_principal">Tela Principal</string>
+    <string name="bt_usuário">Usuário</string>
+    <string name="bt_logar">Logar</string>
+    <string name="digitar_nome">Digite seu nome</string>
+    <string name="digitar_email">Digite seu e-mail</string>
+    <string name="digitar_codigo">Digite código do Desenvolvedor</string>
+    <string name="digitar_senha">Escolha uma senha</string>
+    <string name="confirmar_senha">Confirme sua senha</string>
+    <string name="botao_cadastrar">Cadastrar</string>
+
+    <string name="nome_unidade">Nome da Unidade</string>
+    <string name="email_unidade">E-mail da Unidade</string>
+    <string name="phone_unidade">Telefone Fixo</string>
+    <string name="nome_comandante">Nome do Comandante</string>
+    <string name="telefone_cmd">Telefone Cmd</string>
+    <string name="funcao">Função</string>
+    <string name="nome_scmd">Nome do Subcomandante</string>
+    <string name="funcao_scmd">Função do Subcomandante</string>
+    <string name="editPhoneScmd">Telefone do Scmd</string>
+    <string name="outro_nome">Terceiro Nome</string>
+    <string name="outra_funcao">Função do Terceiro</string>
+    <string name="phone_terceiro">Outro Telefone</string>
+    <string name="endereco_unidade">Endereço da Unidade</string>
+    <string name="nome_cidade">Cidade</string>
+    <string name="bairro">Bairro</string>
+    <string name="botao_salvar">Salvar</string>
+    <string name="funcao_terceiro">Outra Função</string>
+    <string name="title_activity_contato_unidade">ContatoUnidadeActivity</string>
+    <string name="botao_editar">Editar</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+
+</resources>

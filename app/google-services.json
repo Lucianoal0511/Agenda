@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "668427388052",
+    "firebase_url": "https://projeto-pmba.firebaseio.com",
+    "project_id": "projeto-pmba",
+    "storage_bucket": "projeto-pmba.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:668427388052:android:333c9e5a62acc3a87de081",
+        "android_client_info": {
+          "package_name": "com.studio.luciano.agendapmba"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "668427388052-1fh52jek1l0hjpoe45llkspe5btenj5e.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.studio.luciano.agendapmba",
+            "certificate_hash": "dc2019fe5a940bd633ab8054e108261f1a96e9ab"
+          }
+        },
+        {
+          "client_id": "668427388052-80rl559uqf19qboeq60e1fr0gan76cri.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDGKsQqkJ0UNfvPCwf2Oey-RTFy6gnNtsc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "668427388052-80rl559uqf19qboeq60e1fr0gan76cri.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
