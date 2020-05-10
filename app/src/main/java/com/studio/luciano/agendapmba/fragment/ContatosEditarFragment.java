@@ -98,8 +98,10 @@ public class ContatosEditarFragment extends Fragment {
                                 alertDialog.setPositiveButton("Confirmar", new DialogInterface.OnClickListener() {
                                     @Override
                                     public void onClick(DialogInterface dialog, int which) {
-                                        Unidade unidadeSelecionada = listaContatos.get(position);
+                                        List<Unidade> listaContatosAtualizados = adapter.getContatos();//Seleciona a lista atual de pesquisa
+                                        Unidade unidadeSelecionada = listaContatosAtualizados.get(position);//Seta o item da lista atual
                                         unidadeSelecionada.remover();
+                                        listaContatos.clear();//Limpa a lista de contatos após apagar o item
                                         adapter.notifyDataSetChanged();
                                         Toast.makeText(getActivity(), "Produto Excluído com sucesso", Toast.LENGTH_SHORT).show();
                                     }
@@ -126,10 +128,6 @@ public class ContatosEditarFragment extends Fragment {
         return view;
     }
 
-    public void remove(){
-
-
-    }
 
     public void pesquisarContatos(String texto){
         Log.d("pesquisa", texto);
@@ -153,6 +151,7 @@ public class ContatosEditarFragment extends Fragment {
     }
 
     public void recuperarUnidades(){
+        listaContatos.clear();//Limpar lista de contatos para evitar duplicidade
         valueEventListenerContatos = unidadesRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {

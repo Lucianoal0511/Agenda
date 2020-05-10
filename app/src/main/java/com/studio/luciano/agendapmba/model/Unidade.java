@@ -70,9 +70,9 @@ public class Unidade implements Serializable {
     public Map<String, Object> converterMap(){
         HashMap<String, Object> unidadeMap = new HashMap<>();
         unidadeMap.put("nomeUnidade", getNomeUnidade());
-        unidadeMap.put("nomeCmd", getNomeComandante());
-        unidadeMap.put("nomeScmd", getNomeSubcomandante());
-        unidadeMap.put("nomeOutro", getOutroNome());
+        unidadeMap.put("nomeComandante", getNomeComandante());
+        unidadeMap.put("nomeSubcomandante", getNomeSubcomandante());
+        unidadeMap.put("outroNome", getOutroNome());
         unidadeMap.put("telefoneComandante", getTelefoneComandante());
         unidadeMap.put("telefoneSubcomandante", getTelefoneSubcomandante());
         unidadeMap.put("telefoneFixo", getTelefoneFixo());

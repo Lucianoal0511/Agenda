@@ -116,6 +116,7 @@ public class ContatosFragment extends Fragment {
     }
 
     public void recuperarUnidades(){
+        listaContatos.clear();//Limpar lista de contatos para evitar duplicidade
         valueEventListenerContatos = unidadesRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
