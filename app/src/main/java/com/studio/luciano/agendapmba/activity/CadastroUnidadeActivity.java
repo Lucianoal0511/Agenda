@@ -32,6 +32,7 @@ import com.studio.luciano.agendapmba.model.Unidade;
 import java.io.ByteArrayOutputStream;
 
 import de.hdodenhof.circleimageview.CircleImageView;
+import dmax.dialog.SpotsDialog;
 
 public class CadastroUnidadeActivity extends AppCompatActivity {
 
@@ -50,6 +51,7 @@ public class CadastroUnidadeActivity extends AppCompatActivity {
     private static final int SELECAO_GALERIA = 200;
     private StorageReference storageReference;
     private Unidade unidade;
+    private android.app.AlertDialog dialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -199,6 +201,13 @@ public class CadastroUnidadeActivity extends AppCompatActivity {
                     //Criar nome da imagem
                     //String nomeImagem = UUID.randomUUID().toString();
                     //Salvar imagem no Firebase Storage
+                    dialog = new SpotsDialog.Builder()
+                            .setContext(this)
+                            .setMessage("Salvando Imagem")
+                            .setCancelable(false)
+                            .build();//Bloqueia a tela com uma mensagem de salvar impedindo que seja realizada outra operação até quando for salvo
+                    dialog.show();
+
                     final StorageReference imagemRef = storageReference
                             .child("imagens")
                             .child("PerfilUnidade")
@@ -223,6 +232,8 @@ public class CadastroUnidadeActivity extends AppCompatActivity {
                                 public void onSuccess(Uri uri) {
                                     String url = uri.toString();
                                     unidade.setFoto(url);
+
+                                    dialog.dismiss();
                                 }
                             });
                         }
