@@ -278,6 +278,7 @@ public class EditarUnidadeActivity extends AppCompatActivity {
             unidadeSelecao.setOutroNome(textoNomeTerceiro);
             unidadeSelecao.setTelefone3(textoTelefoneTerceiro);
             unidadeSelecao.atualizarUnidade();
+            finish();
             Toast.makeText(this, "Sucesso ao editar unidade.", Toast.LENGTH_SHORT).show();
         }catch (Exception e){
             Toast.makeText(this, "Erro: " + e.getMessage(), Toast.LENGTH_SHORT).show();

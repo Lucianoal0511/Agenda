@@ -130,6 +130,7 @@ public class CadastroUnidadeActivity extends AppCompatActivity {
 
                 try {
                     unidade.salvarUnidade();
+                    finish();
                     Toast.makeText(CadastroUnidadeActivity.this, "Sucesso ao salvar unidade.", Toast.LENGTH_SHORT).show();
                 }catch (Exception e){
                     Toast.makeText(CadastroUnidadeActivity.this, "Erro: " + e.getMessage(), Toast.LENGTH_SHORT).show();
