@@ -17,10 +17,8 @@ import android.provider.MediaStore;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.Toast;
 
-import com.bumptech.glide.Glide;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.textfield.TextInputEditText;
@@ -28,14 +26,10 @@ import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 import com.studio.luciano.agendapmba.R;
 import com.studio.luciano.agendapmba.config.ConfiguracaoFirebase;
-import com.studio.luciano.agendapmba.helper.Base64Custom;
-import com.studio.luciano.agendapmba.helper.DesenvolvedorFirebase;
 import com.studio.luciano.agendapmba.helper.Permissao;
-import com.studio.luciano.agendapmba.helper.UnidadeFirebase;
 import com.studio.luciano.agendapmba.model.Unidade;
 
 import java.io.ByteArrayOutputStream;
-import java.util.UUID;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -55,7 +49,6 @@ public class CadastroUnidadeActivity extends AppCompatActivity {
     private static final int SELECAO_CAMERA = 100;
     private static final int SELECAO_GALERIA = 200;
     private StorageReference storageReference;
-    //private String identificadorUnidade;
     private Unidade unidade;
 
     @Override
@@ -205,11 +198,11 @@ public class CadastroUnidadeActivity extends AppCompatActivity {
                     byte[] dadosImagem = baos.toByteArray();
                     //Criar nome da imagem
                     //String nomeImagem = UUID.randomUUID().toString();
-                    //Salvar imagem no firebase
+                    //Salvar imagem no Firebase Storage
                     final StorageReference imagemRef = storageReference
                             .child("imagens")
                             .child("PerfilUnidade")
-                            .child(unidade.getId()+ ".jpeg");
+                            .child(unidade.getId() + ".jpeg");
 
                     UploadTask uploadTask = imagemRef.putBytes(dadosImagem);//Fazer o upload da imagem
                     uploadTask.addOnFailureListener(new OnFailureListener() {
@@ -241,10 +234,6 @@ public class CadastroUnidadeActivity extends AppCompatActivity {
         }
     }
 
-    /*public void atualizaFotoUnidade(Uri url){
-        DesenvolvedorFirebase.atualizaFotoUnidade(url);
-    }*/
-
     //Permitir a utilização do Cartão de memória e da Câmera
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
@@ -273,22 +262,7 @@ public class CadastroUnidadeActivity extends AppCompatActivity {
         dialog.show();
     }
 
-    public void cadastrarUnidade(Unidade unidade){
-
-        try {
-            //Utilizando o e-mail para criar o id
-            /*String identificadorUnidade = Base64Custom.codificarBase64(unidade.getEmailUnidade());
-            unidade.setId(identificadorUnidade);*/
-            unidade.salvarUnidade();
-            Toast.makeText(CadastroUnidadeActivity.this, "Sucesso ao salvar unidade.", Toast.LENGTH_SHORT).show();
-            //Toast.makeText(this, "Sucesso ao salvar unidade.", Toast.LENGTH_SHORT).show();
-        }catch (Exception e){
-            Toast.makeText(CadastroUnidadeActivity.this, "Erro: " + e.getMessage(), Toast.LENGTH_SHORT).show();
-            //Toast.makeText(this, "Erro: " + e.getMessage(), Toast.LENGTH_SHORT).show();
-            e.printStackTrace();
-        }
-    }
-
+    //Não precisou ser utilizado
     public void validarCamposUnidade(){
         //Recuperar textos dos campos
         String textoNomeUnidade = campoNomeUnidade.getText().toString();
@@ -338,16 +312,6 @@ public class CadastroUnidadeActivity extends AppCompatActivity {
                                                                     unidade.setEndereco(textoEnderecoUnidade);
                                                                     unidade.setBairro(textoBairroUnidade);
                                                                     unidade.setCidade(textoCidadeUnidade);
-
-                                                                    /*String foto = unidade.getFoto();
-                                                                    if (foto != null){
-                                                                        Uri url = Uri.parse(foto);
-                                                                        Glide.with(CadastroUnidadeActivity.this)
-                                                                                .load(url)
-                                                                                .into(imagemUnidade);
-                                                                    }else {
-                                                                        imagemUnidade.setImageResource(R.drawable.brasao_cipm);
-                                                                    }*/
 
                                                                     //cadastrarUnidade(unidade);
                                                                     //Limpar campos após cadastrar

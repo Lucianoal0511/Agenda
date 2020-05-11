@@ -17,7 +17,6 @@ import android.provider.MediaStore;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
@@ -29,14 +28,10 @@ import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 import com.studio.luciano.agendapmba.R;
 import com.studio.luciano.agendapmba.config.ConfiguracaoFirebase;
-import com.studio.luciano.agendapmba.helper.Base64Custom;
-import com.studio.luciano.agendapmba.helper.DesenvolvedorFirebase;
 import com.studio.luciano.agendapmba.helper.Permissao;
-import com.studio.luciano.agendapmba.helper.UnidadeFirebase;
 import com.studio.luciano.agendapmba.model.Unidade;
 
 import java.io.ByteArrayOutputStream;
-import java.util.UUID;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -59,6 +54,7 @@ public class EditarUnidadeActivity extends AppCompatActivity {
     private DatabaseReference database;
     private Unidade unidade;
     private Unidade unidadeSelecao;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -184,11 +180,11 @@ public class EditarUnidadeActivity extends AppCompatActivity {
                     byte[] dadosImagem = baos.toByteArray();
                     //Criar nome da imagem
                     //String nomeImagem = UUID.randomUUID().toString();
-                    //Salvar imagem no firebase
+                    //Salvar imagem no Firebase no Storage
                     final StorageReference imagemRef = storageReference
                             .child("imagens")
                             .child("PerfilUnidade")
-                            .child(unidade.getId() + ".jpeg");
+                            .child(unidadeSelecao.getId() + ".jpeg");
 
                     UploadTask uploadTask = imagemRef.putBytes(dadosImagem);//Fazer o upload da imagem
                     uploadTask.addOnFailureListener(new OnFailureListener() {
@@ -208,8 +204,7 @@ public class EditarUnidadeActivity extends AppCompatActivity {
                                 @Override
                                 public void onSuccess(Uri uri) {
                                     String url = uri.toString();
-                                    unidade.setFoto(url);
-                                    //atualizaFotoUnidade(url);
+                                    unidadeSelecao.setFoto(url);
                                 }
                             });
                         }
@@ -219,10 +214,6 @@ public class EditarUnidadeActivity extends AppCompatActivity {
                 e.printStackTrace();
             }
         }
-    }
-
-    public void atualizaFotoUnidade(Uri url){
-        UnidadeFirebase.atualizarFotoUnidade();
     }
 
     //Permitir a utilização do Cartão de memória e da Câmera

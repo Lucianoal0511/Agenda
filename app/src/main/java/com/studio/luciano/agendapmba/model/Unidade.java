@@ -3,7 +3,6 @@ package com.studio.luciano.agendapmba.model;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.Exclude;
 import com.studio.luciano.agendapmba.config.ConfiguracaoFirebase;
-import com.studio.luciano.agendapmba.helper.UnidadeFirebase;
 
 import java.io.Serializable;
 import java.util.HashMap;
