@@ -267,6 +267,12 @@ public class EditarUnidadeActivity extends AppCompatActivity {
             String textoTelefoneScmd = campoTelefoneScmd.getText().toString();
             String textoNomeTerceiro = campoNomeTerceiro.getText().toString();
             String textoTelefoneTerceiro = campoTelefoneTerceiro.getText().toString();
+            String textoFuncaoCmd = campoFuncaoCmd.getText().toString();
+            String textoFuncaoScmd = campoFuncaoScmd.getText().toString();
+            String textoFuncaoTerceiro = campoFuncaoTerceiro.getText().toString();
+            String textoEndereco = campoEnderecoUnidade.getText().toString();
+            String textoBairro = campoBairroUnidade.getText().toString();
+            String textoCidade = campoCidadeUnidade.getText().toString();
 
             unidadeSelecao.setNomeUnidade(textoNomeUnidade);
             unidadeSelecao.setEmailUnidade(textoEmailUnidade);
@@ -277,6 +283,12 @@ public class EditarUnidadeActivity extends AppCompatActivity {
             unidadeSelecao.setTelefoneSubcomandante(textoTelefoneScmd);
             unidadeSelecao.setOutroNome(textoNomeTerceiro);
             unidadeSelecao.setTelefone3(textoTelefoneTerceiro);
+            unidadeSelecao.setFuncaoC(textoFuncaoCmd);
+            unidadeSelecao.setFuncaoSC(textoFuncaoScmd);
+            unidadeSelecao.setFuncao3(textoFuncaoTerceiro);
+            unidadeSelecao.setEndereco(textoEndereco);
+            unidadeSelecao.setBairro(textoBairro);
+            unidadeSelecao.setCidade(textoCidade);
             unidadeSelecao.atualizarUnidade();
             finish();
             Toast.makeText(this, "Sucesso ao editar unidade.", Toast.LENGTH_SHORT).show();

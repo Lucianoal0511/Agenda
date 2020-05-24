@@ -77,6 +77,12 @@ public class Unidade implements Serializable {
         unidadeMap.put("telefoneFixo", getTelefoneFixo());
         unidadeMap.put("telefone3", getTelefone3());
         unidadeMap.put("emailUnidade", getEmailUnidade());
+        unidadeMap.put("endereco", getEndereco());
+        unidadeMap.put("bairro", getBairro());
+        unidadeMap.put("cidade", getCidade());
+        unidadeMap.put("funcaoC", getFuncaoC());
+        unidadeMap.put("funcaoSC", getFuncaoSC());
+        unidadeMap.put("funcao3", getFuncao3());
         unidadeMap.put("foto", getFoto());
 
         return unidadeMap;
