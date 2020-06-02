@@ -1,13 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+     android:layout_height="match_parent"
+     android:layout_width="match_parent"
+    >
+
+<androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/white"
     tools:context=".activity.CadastroUnidadeActivity">
 
-    <include layout="@layout/toolbar"/>
+    <include
+        android:id="@+id/include2"
+        layout="@layout/toolbar" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayout20"
@@ -415,3 +424,5 @@
         app:srcCompat="@drawable/ic_photo_library_azul_24dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

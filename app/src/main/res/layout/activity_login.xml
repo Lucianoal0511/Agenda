@@ -71,6 +71,8 @@
         android:layout_marginEnd="24dp"
         android:layout_marginRight="24dp"
         android:layout_marginBottom="16dp"
+        android:gravity="center_horizontal"
+        android:isScrollContainer="true"
         android:text="Espaço destinado para Desenvolvedores"
         android:textColor="@color/colorPrimary"
         android:textSize="18sp"

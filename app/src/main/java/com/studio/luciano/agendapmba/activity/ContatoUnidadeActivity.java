@@ -13,6 +13,7 @@ import androidx.appcompat.widget.Toolbar;
 
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.google.android.material.textfield.TextInputEditText;
 import com.studio.luciano.agendapmba.R;
@@ -26,6 +27,7 @@ public class ContatoUnidadeActivity extends AppCompatActivity {
             campoNomeScmd, campoFuncaoScmd, campoTelefoneScmd, campoNomeTerceiro, campoFuncaoTerceiro, campoTelefoneTerceiro,
             campoEnderecoUnidade, campoBairroUnidade, campoCidadeUnidade;
     private CircleImageView imagemUnidade;
+    private TextView textViewTitulo;
     private Unidade unidadeSelecao;
 
     @Override
@@ -33,13 +35,14 @@ public class ContatoUnidadeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_contato_unidade);
         Toolbar toolbar = findViewById(R.id.toolbar);
-        toolbar.setTitle("Unidade");
+        toolbar.setTitle("");
         setSupportActionBar(toolbar);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);//Colocar o botão voltar
 
         //Configurar os campos
-        campoNomeUnidade = findViewById(R.id.editNomeUnidade);
+        textViewTitulo = findViewById(R.id.editNomeUnidade);
+        //campoNomeUnidade = findViewById(R.id.editNomeUnidade);
         campoEmailUnidade = findViewById(R.id.editEmailUnidade);
         campoTelefoneFixo = findViewById(R.id.editTelefoneFixo);
         campoNomeCmd = findViewById(R.id.editNomeComandante);
@@ -60,7 +63,8 @@ public class ContatoUnidadeActivity extends AppCompatActivity {
         Bundle bundle = getIntent().getExtras();
         if (bundle != null){
             unidadeSelecao = (Unidade) bundle.getSerializable("contatoUnidade");
-            campoNomeUnidade.setText(unidadeSelecao.getNomeUnidade());
+            //campoNomeUnidade.setText(unidadeSelecao.getNomeUnidade());
+            textViewTitulo.setText(unidadeSelecao.getNomeUnidade());
             campoEmailUnidade.setText(unidadeSelecao.getEmailUnidade());
             campoTelefoneFixo.setText(unidadeSelecao.getTelefoneFixo());
             campoNomeCmd.setText(unidadeSelecao.getNomeComandante());
