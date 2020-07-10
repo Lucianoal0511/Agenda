@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
@@ -54,6 +55,7 @@ public class CadastroActivity extends AppCompatActivity {
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()){
                     Toast.makeText(CadastroActivity.this, "Sucesso ao cadastrar desenvolvedor!!!", Toast.LENGTH_SHORT).show();
+                    //startActivity(new Intent(getApplicationContext(), PainelControleActivity.class));
                     finish();
                     try {
                         String identificadorDesenvolvedor = Base64Custom.codificarBase64(desenvolvedor.getEmail());

@@ -45,5 +45,12 @@
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="title_activity_cadastro_area">CadastroAreaActivity</string>
+    <string name="nome_area">Bairro ou Cidade</string>
+    <string name="nomeArea">Região de Atuação</string>
+    <string name="title_activity_cadastrar_regiao">CadastrarRegiaoActivity</string>
+    <string name="title_activity_painel_local">PainelLocalActivity</string>
+    <string name="title_activity_teste2">TesteActivity2</string>
+    <string name="bt_adicionar_local">Adicionar Local</string>
 
 </resources>

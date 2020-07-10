@@ -7,25 +7,30 @@
      android:layout_height="match_parent"
      android:layout_width="match_parent">
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginLeft="15dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginRight="15dp"
-        android:orientation="vertical"
-        android:padding="20dp">
+        android:layout_height="wrap_content">
+
+        <include
+            android:id="@+id/include"
+            layout="@layout/toolbar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textInputLayout12"
-            android:layout_width="196dp"
-            android:layout_height="51dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
-            android:textColorHint="@color/colorPrimary">
+            android:textColorHint="@color/colorPrimary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/include">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/editEmailUnidade"
@@ -34,19 +39,22 @@
                 android:hint="@string/email_unidade"
                 android:inputType="textEmailAddress"
                 android:textColor="@color/colorPrimary"
-                android:textSize="15sp" />
+                android:textSize="18sp" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textInputLayout11"
-            android:layout_width="196dp"
-            android:layout_height="52dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
-            android:textColorHint="@color/colorPrimary">
+            android:textColorHint="@color/colorPrimary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayout12">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/editTelefoneFixo"
@@ -55,19 +63,22 @@
                 android:hint="@string/phone_unidade"
                 android:inputType="phone"
                 android:textColor="@color/colorPrimary"
-                android:textSize="15sp" />
+                android:textSize="18sp" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textInputLayout21"
-            android:layout_width="403dp"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
-            android:textColorHint="@color/colorPrimary">
+            android:textColorHint="@color/colorPrimary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayout11">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/editNomeComandante"
@@ -76,19 +87,22 @@
                 android:hint="@string/nome_comandante"
                 android:inputType="textPersonName"
                 android:textColor="@color/colorPrimary"
-                android:textSize="15sp" />
+                android:textSize="18sp" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textInputLayout14"
-            android:layout_width="196dp"
-            android:layout_height="52dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
-            android:textColorHint="@color/colorPrimary">
+            android:textColorHint="@color/colorPrimary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayout21">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/editFuncaoCmd"
@@ -97,19 +111,22 @@
                 android:hint="@string/funcao"
                 android:inputType="textPersonName"
                 android:textColor="@color/colorPrimary"
-                android:textSize="15sp" />
+                android:textSize="18sp" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textInputLayout13"
-            android:layout_width="196dp"
-            android:layout_height="51dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
-            android:textColorHint="@color/colorPrimary">
+            android:textColorHint="@color/colorPrimary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayout14">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/editPhoneCmd"
@@ -118,19 +135,22 @@
                 android:hint="@string/telefone_cmd"
                 android:inputType="phone"
                 android:textColor="@color/colorPrimary"
-                android:textSize="15sp" />
+                android:textSize="18sp" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textInputLayout22"
-            android:layout_width="403dp"
-            android:layout_height="52dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
-            android:textColorHint="@color/colorPrimary">
+            android:textColorHint="@color/colorPrimary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayout13">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/editNomeScmd"
@@ -139,19 +159,22 @@
                 android:hint="@string/nome_scmd"
                 android:inputType="textPersonName"
                 android:textColor="@color/colorPrimary"
-                android:textSize="15sp" />
+                android:textSize="18sp" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textInputLayout16"
-            android:layout_width="196dp"
-            android:layout_height="52dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
-            android:textColorHint="@color/colorPrimary">
+            android:textColorHint="@color/colorPrimary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayout22">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/editFuncaoScmd"
@@ -160,19 +183,22 @@
                 android:hint="@string/funcao_scmd"
                 android:inputType="textPersonName"
                 android:textColor="@color/colorPrimary"
-                android:textSize="15sp" />
+                android:textSize="18sp" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textInputLayout15"
-            android:layout_width="196dp"
-            android:layout_height="51dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
-            android:textColorHint="@color/colorPrimary">
+            android:textColorHint="@color/colorPrimary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayout16">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/editPhoneScmd"
@@ -181,19 +207,22 @@
                 android:hint="@string/editPhoneScmd"
                 android:inputType="phone"
                 android:textColor="@color/colorPrimary"
-                android:textSize="15sp" />
+                android:textSize="18sp" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textInputLayout23"
-            android:layout_width="403dp"
-            android:layout_height="52dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
-            android:textColorHint="@color/colorPrimary">
+            android:textColorHint="@color/colorPrimary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayout15">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/editNome3"
@@ -202,19 +231,22 @@
                 android:hint="@string/outro_nome"
                 android:inputType="textPersonName"
                 android:textColor="@color/colorPrimary"
-                android:textSize="15sp" />
+                android:textSize="18sp" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textInputLayout9"
-            android:layout_width="196dp"
-            android:layout_height="52dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
-            android:textColorHint="@color/colorPrimary">
+            android:textColorHint="@color/colorPrimary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayout23">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/editfuncao3"
@@ -222,39 +254,46 @@
                 android:layout_height="wrap_content"
                 android:hint="@string/funcao_terceiro"
                 android:textColor="@color/colorPrimary"
-                android:textSize="15sp" />
+                android:textSize="18sp" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textInputLayout17"
-            android:layout_width="195dp"
-            android:layout_height="51dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
-            android:textColorHint="@color/colorPrimary">
+            android:textColorHint="@color/colorPrimary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayout9">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/editPhone3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/phone_terceiro"
+                android:inputType="phone"
                 android:textColor="@color/colorPrimary"
-                android:textSize="15sp" />
+                android:textSize="18sp" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textInputLayout24"
-            android:layout_width="403dp"
-            android:layout_height="52dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
-            android:textColorHint="@color/colorPrimary">
+            android:textColorHint="@color/colorPrimary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayout17">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/editEndereco"
@@ -263,15 +302,22 @@
                 android:hint="@string/endereco_unidade"
                 android:inputType="text"
                 android:textColor="@color/colorPrimary"
-                android:textSize="15sp" />
+                android:textSize="18sp" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textInputLayout19"
-            android:layout_width="196dp"
-            android:layout_height="52dp"
-            android:layout_marginTop="16dp"
-            android:textColorHint="@color/colorPrimary">
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:textColorHint="@color/colorPrimary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayout24">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/editBairro"
@@ -279,15 +325,22 @@
                 android:layout_height="wrap_content"
                 android:hint="@string/bairro"
                 android:textColor="@color/colorPrimary"
-                android:textSize="15sp" />
+                android:textSize="18sp" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textInputLayout8"
-            android:layout_width="196dp"
-            android:layout_height="51dp"
-            android:layout_marginTop="16dp"
-            android:textColorHint="@color/colorPrimary">
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:textColorHint="@color/colorPrimary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayout19">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/editCidade"
@@ -296,9 +349,34 @@
                 android:hint="@string/nome_cidade"
                 android:inputType="textPersonName"
                 android:textColor="@color/colorPrimary"
-                android:textSize="15sp" />
+                android:textSize="18sp" />
         </com.google.android.material.textfield.TextInputLayout>
 
-    </LinearLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayout30"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:isScrollContainer="true"
+            android:textColorHint="@color/colorPrimary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayout8">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/textoLocal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/nomeArea"
+                android:inputType="textPersonName"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="18sp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </ScrollView>

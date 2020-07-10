@@ -27,6 +27,7 @@ public class Unidade implements Serializable {
     private String funcaoC;
     private String funcaoSC;
     private String funcao3;
+    private String locais;
 
     public Unidade() {
 
@@ -84,8 +85,17 @@ public class Unidade implements Serializable {
         unidadeMap.put("funcaoSC", getFuncaoSC());
         unidadeMap.put("funcao3", getFuncao3());
         unidadeMap.put("foto", getFoto());
+        unidadeMap.put("locais", getLocais());
 
         return unidadeMap;
+    }
+
+    public String getLocais() {
+        return locais;
+    }
+
+    public void setLocais(String locais) {
+        this.locais = locais;
     }
 
     public String getId() {

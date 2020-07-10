@@ -18,7 +18,7 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".activity.EditarUnidadeActivity"
-            android:parentActivityName=".activity.PainelControleActivity"></activity>
+            android:parentActivityName=".activity.PainelControleActivity" />
         <activity
             android:name=".activity.ContatoUnidadeActivity"
             android:label="@string/title_activity_contato_unidade"
@@ -27,10 +27,10 @@
         <activity android:name=".activity.PainelControleActivity" />
         <activity
             android:name=".activity.CadastroUnidadeActivity"
-            android:parentActivityName=".activity.PainelControleActivity"/>
+            android:parentActivityName=".activity.PainelControleActivity" />
         <activity
             android:name=".activity.CadastroActivity"
-            android:parentActivityName=".activity.MainActivity"/>
+            android:parentActivityName=".activity.MainActivity" />
         <activity android:name=".activity.MainActivity" />
         <activity android:name=".activity.LoginActivity">
             <intent-filter>

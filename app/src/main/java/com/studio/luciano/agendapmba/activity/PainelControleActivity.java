@@ -44,7 +44,7 @@ public class PainelControleActivity extends AppCompatActivity {
                 getSupportFragmentManager(),
                 FragmentPagerItems.with(this)
                 .add("Lista de Unidades", ContatosEditarFragment.class)
-                .add("Lista de Criminosos", CriminososEditarFragment.class)
+                .add("Em Branco", CriminososEditarFragment.class)
                 .create()
         );
 

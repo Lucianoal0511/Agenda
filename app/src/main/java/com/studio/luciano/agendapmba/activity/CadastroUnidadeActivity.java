@@ -43,10 +43,10 @@ public class CadastroUnidadeActivity extends AppCompatActivity {
 
     private TextInputEditText campoNomeUnidade, campoEmailUnidade, campoTelefoneFixo, campoNomeCmd, campoFuncaoCmd, campoTelefoneCmd,
             campoNomeScmd, campoFuncaoScmd, campoTelefoneScmd, campoNomeTerceiro, campoFuncaoTerceiro, campoTelefoneTerceiro,
-            campoEnderecoUnidade, campoBairroUnidade, campoCidadeUnidade;
+            campoEnderecoUnidade, campoBairroUnidade, campoCidadeUnidade, campoLocal;
     private Button botaoSalvar;
     private CircleImageView imagemUnidade;
-    private ImageButton imageButtonCamera, imageButtonGaleria;
+    private ImageButton imageButtonCamera, imageButtonGaleria, imageButtonMap;
     private static final int SELECAO_CAMERA = 100;
     private static final int SELECAO_GALERIA = 200;
     private StorageReference storageReference;
@@ -88,9 +88,11 @@ public class CadastroUnidadeActivity extends AppCompatActivity {
         campoEnderecoUnidade = findViewById(R.id.editEndereco);
         campoBairroUnidade = findViewById(R.id.editBairro);
         campoCidadeUnidade = findViewById(R.id.editCidade);
+        campoLocal = findViewById(R.id.textoLocal);
         imagemUnidade = findViewById(R.id.circleImageViewUnidade);
         imageButtonCamera = findViewById(R.id.imageButtonCamera);
         imageButtonGaleria = findViewById(R.id.imageButtonGaleria);
+        imageButtonMap = findViewById(R.id.imageButtonMap);
 
         botaoSalvar = findViewById(R.id.bt_salvarId);
         botaoSalvar.setOnClickListener(new View.OnClickListener() {
@@ -111,6 +113,7 @@ public class CadastroUnidadeActivity extends AppCompatActivity {
                 String textoEnderecoUnidade = campoEnderecoUnidade.getText().toString();
                 String textoBairroUnidade = campoBairroUnidade.getText().toString();
                 String textoCidadeUnidade = campoCidadeUnidade.getText().toString();
+                String textoLocal = campoLocal.getText().toString();
 
                 unidade.setNomeUnidade(textoNomeUnidade);
                 unidade.setEmailUnidade(textoEmailUnidade);
@@ -127,6 +130,7 @@ public class CadastroUnidadeActivity extends AppCompatActivity {
                 unidade.setEndereco(textoEnderecoUnidade);
                 unidade.setBairro(textoBairroUnidade);
                 unidade.setCidade(textoCidadeUnidade);
+                unidade.setLocais(textoLocal);
 
                 try {
                     unidade.salvarUnidade();
@@ -153,6 +157,7 @@ public class CadastroUnidadeActivity extends AppCompatActivity {
                 campoEnderecoUnidade.setText("");
                 campoBairroUnidade.setText("");
                 campoCidadeUnidade.setText("");
+                campoLocal.setText("");
             }
         });
 
@@ -175,6 +180,14 @@ public class CadastroUnidadeActivity extends AppCompatActivity {
                 }
             }
         });
+
+        /*imageButtonMap.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Intent i = new Intent(CadastroUnidadeActivity.this, AdicionarLocalActivity.class);
+                //startActivity(i);
+            }
+        });*/
     }
 
     //Vamos sobrescrever um método

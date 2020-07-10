@@ -45,10 +45,10 @@ public class EditarUnidadeActivity extends AppCompatActivity {
 
     private TextInputEditText campoNomeUnidade, campoEmailUnidade, campoTelefoneFixo, campoNomeCmd, campoFuncaoCmd, campoTelefoneCmd,
             campoNomeScmd, campoFuncaoScmd, campoTelefoneScmd, campoNomeTerceiro, campoFuncaoTerceiro, campoTelefoneTerceiro,
-            campoEnderecoUnidade, campoBairroUnidade, campoCidadeUnidade;
+            campoEnderecoUnidade, campoBairroUnidade, campoCidadeUnidade, campoLocal;
     private Button botaoEditar;
     private CircleImageView imagemUnidade;
-    private ImageButton imageButtonCamera, imageButtonGaleria;
+    private ImageButton imageButtonCamera, imageButtonGaleria, imageButtonMap;
     private static final int SELECAO_CAMERA = 100;
     private static final int SELECAO_GALERIA = 200;
     private StorageReference storageReference;
@@ -64,7 +64,7 @@ public class EditarUnidadeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_editar_unidade);
 
         Toolbar toolbar = findViewById(R.id.toolbarPrincipal);
-        toolbar.setTitle("");
+        toolbar.setTitle("Editar Unidade");
         setSupportActionBar(toolbar);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);//Colocar a seta de retornar
@@ -93,9 +93,11 @@ public class EditarUnidadeActivity extends AppCompatActivity {
         campoEnderecoUnidade = findViewById(R.id.editEndereco);
         campoBairroUnidade = findViewById(R.id.editBairro);
         campoCidadeUnidade = findViewById(R.id.editCidade);
+        campoLocal = findViewById(R.id.textoLocal);
         imagemUnidade = findViewById(R.id.circleImageViewUnidade);
         imageButtonCamera = findViewById(R.id.imageButtonCamera);
         imageButtonGaleria = findViewById(R.id.imageButtonGaleria);
+        imageButtonMap = findViewById(R.id.imageButtonMap2);
 
         botaoEditar = findViewById(R.id.bt_editarId);
         botaoEditar.setOnClickListener(new View.OnClickListener() {
@@ -125,6 +127,14 @@ public class EditarUnidadeActivity extends AppCompatActivity {
             }
         });
 
+        /*imageButtonMap.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(EditarUnidadeActivity.this, PainelLocalActivity.class);
+                startActivity(i);
+            }
+        });*/
+
         //Recuperar dados da unidade
         Bundle bundle = getIntent().getExtras();
         if (bundle != null) {
@@ -144,6 +154,7 @@ public class EditarUnidadeActivity extends AppCompatActivity {
             campoEnderecoUnidade.setText(unidadeSelecao.getEndereco());
             campoBairroUnidade.setText(unidadeSelecao.getBairro());
             campoCidadeUnidade.setText(unidadeSelecao.getCidade());
+            campoLocal.setText(unidadeSelecao.getLocais());
 
             //Recuperar foto
             String foto = unidadeSelecao.getFoto();
@@ -273,6 +284,7 @@ public class EditarUnidadeActivity extends AppCompatActivity {
             String textoEndereco = campoEnderecoUnidade.getText().toString();
             String textoBairro = campoBairroUnidade.getText().toString();
             String textoCidade = campoCidadeUnidade.getText().toString();
+            String textoLocais = campoLocal.getText().toString();
 
             unidadeSelecao.setNomeUnidade(textoNomeUnidade);
             unidadeSelecao.setEmailUnidade(textoEmailUnidade);
@@ -289,6 +301,7 @@ public class EditarUnidadeActivity extends AppCompatActivity {
             unidadeSelecao.setEndereco(textoEndereco);
             unidadeSelecao.setBairro(textoBairro);
             unidadeSelecao.setCidade(textoCidade);
+            unidadeSelecao.setLocais(textoLocais);
             unidadeSelecao.atualizarUnidade();
             finish();
             Toast.makeText(this, "Sucesso ao editar unidade.", Toast.LENGTH_SHORT).show();
@@ -297,4 +310,33 @@ public class EditarUnidadeActivity extends AppCompatActivity {
             e.printStackTrace();
         }
     }
+
+    /*public void adicionarLocais(View view){//Utiliza View como parâmetro pois foi utilizado o onClick no xml
+
+        String textoLocal = campoLocal.getText().toString();
+        if (!textoLocal.isEmpty()){
+            Local local = new Local();
+            local.setIdUnidade(idUnidadeInformante);
+            local.setNomeLocal(textoLocal);
+
+            salvarLocal(idUnidadeInformante, local);
+            //finish();
+            Toast.makeText(this, "Local adicionado com sucesso", Toast.LENGTH_SHORT).show();
+        }else {
+            Toast.makeText(this, "Preencha o campo local", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    public void salvarLocal(String idUnidadeInformante, Local local) {
+
+        DatabaseReference database = ConfiguracaoFirebase.getFirebaseDatabase();
+        DatabaseReference localRef = database.child("locais");
+
+        localRef.child(idUnidadeInformante)
+                .push()//Cria um id para o local automaticamente
+                .setValue(local);
+
+        //Limpar texto
+        campoLocal.setText("");
+    }*/
 }
