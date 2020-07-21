@@ -367,6 +367,7 @@
             android:id="@+id/circleImageViewUnidade"
             android:layout_width="100dp"
             android:layout_height="100dp"
+            android:layout_marginTop="8dp"
             android:src="@drawable/brasao_cipm"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -424,8 +425,7 @@
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textInputLayout30"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            tools:layout_editor_absoluteY="80dp"
+            android:layout_height="100dp"
             android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
             android:layout_marginTop="8dp"
@@ -439,7 +439,7 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/textoLocal"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="100dp"
                 android:hint="@string/nomeArea"
                 android:inputType="textPersonName"
                 android:textColor="@color/colorPrimaryDark" />

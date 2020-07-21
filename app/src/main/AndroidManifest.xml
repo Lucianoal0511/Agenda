@@ -16,6 +16,7 @@
         android:roundIcon="@mipmap/ic_pmba_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".activity.LocaisActivity"></activity>
         <activity
             android:name=".activity.EditarUnidadeActivity"
             android:parentActivityName=".activity.PainelControleActivity" />

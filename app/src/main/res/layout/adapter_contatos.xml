@@ -54,6 +54,7 @@
                     android:layout_weight="1"
                     android:gravity="right"
                     android:text="@string/funcao" />
+
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>

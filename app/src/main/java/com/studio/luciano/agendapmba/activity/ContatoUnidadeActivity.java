@@ -57,7 +57,7 @@ public class ContatoUnidadeActivity extends AppCompatActivity {
         campoEnderecoUnidade = findViewById(R.id.editEndereco);
         campoBairroUnidade = findViewById(R.id.editBairro);
         campoCidadeUnidade = findViewById(R.id.editCidade);
-        campoLocal = findViewById(R.id.textoLocal);
+        //campoLocal = findViewById(R.id.textoLocal);
         imagemUnidade = findViewById(R.id.circleImageViewUnidade);
 
         //Recuperar dados da unidade
@@ -80,7 +80,7 @@ public class ContatoUnidadeActivity extends AppCompatActivity {
             campoEnderecoUnidade.setText(unidadeSelecao.getEndereco());
             campoBairroUnidade.setText(unidadeSelecao.getBairro());
             campoCidadeUnidade.setText(unidadeSelecao.getCidade());
-            campoLocal.setText(unidadeSelecao.getLocais());
+            //campoLocal.setText(unidadeSelecao.getLocais());
 
             //Recuperar foto
             String foto = unidadeSelecao.getFoto();
@@ -128,8 +128,10 @@ public class ContatoUnidadeActivity extends AppCompatActivity {
         startActivity(i.createChooser(i, "Compartilhar"));
     }
 
-    /*public void abrirRegiao(View view){
+    public void abrirRegiao(View view){
 
-        //Intent i = new Intent()
-    }*/
+        Intent i = new Intent(ContatoUnidadeActivity.this, LocaisActivity.class);
+        i.putExtra("unidadeLocais", unidadeSelecao);
+        startActivity(i);
+    }
 }

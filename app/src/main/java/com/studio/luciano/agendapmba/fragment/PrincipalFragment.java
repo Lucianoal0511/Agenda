@@ -34,7 +34,7 @@ public class PrincipalFragment extends Fragment {
 
         //Colocar Versão do App
         Element versao = new Element();
-        versao.setTitle("Versão 1.8");
+        versao.setTitle("Versão 1.8.2");
 
         return new AboutPage(getActivity())
                 .setImage(R.drawable.brasaopmba)//Coloca o brasão da PMBA
